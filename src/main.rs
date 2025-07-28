@@ -24,6 +24,7 @@ fn read_battery_contents(battery: &PathBuf) -> u8 {
 }
 
 fn main() {
+    println!("[LOG] Battery-Warn started");
     let battery_path = get_battery();
     if let Some(battery_path) = battery_path {
         loop {
@@ -44,4 +45,5 @@ fn main() {
             thread::sleep(time::Duration::from_secs(300));
         }
     }
+    println!("[LOG] Battery-Warn ended");
 }
